@@ -29,6 +29,28 @@ function Random(){
         setLoading(false);
     }
 
+    
+    // We can also Do this...WITHOUT AXIOS
+    // async function fetchData(){
+    //     setLoading(true);
+    //     const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`;
+    //     const res = await fetch(url);
+    //     const {data} = await res.json();
+    //     // console.log(data);
+    //     const imageSource = data.images.downsized_large.url;
+    //     // console.log(imageSource);
+    //     setGif(imageSource);
+    //     setLoading(false);
+
+    //     // Or we can also do
+    //     // const output = await axios.get(url);
+    //     // Also we have to import Axios
+    // }
+
+    useEffect(() =>{
+        fetchData();
+    }, [])
+
     useEffect(() => {
         fetchData();
     }, [])
